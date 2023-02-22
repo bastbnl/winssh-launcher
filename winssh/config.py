@@ -213,6 +213,12 @@ class NativeSSHLauncherConfiguration(
                     if session_group in [_GROUP_ALL, _GROUP_LABEL_FOR_ALL, ]:
                         raise AssertionError(session_group, )
 
+                # Session names must be unique 
+                if single_section_key in [e.label.lower() for e in to_return]:
+                    raise AssertionError(
+                        f'Session [{single_section_key}] is not unique',
+                    )
+
                 # TODO: Check the section name as it may contain a hostname
                 to_return.append(
                     SSHConnectionString(

@@ -16,7 +16,7 @@ from cx_Freeze import Executable, setup
 setup(
     author='Bas ten Berge',
     name="winssh-launcher",
-    version="0.4.5",
+    version="0.4.6",
     options={
         "build_exe": {
             "packages": [
